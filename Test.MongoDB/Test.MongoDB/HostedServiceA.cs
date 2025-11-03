@@ -20,7 +20,7 @@ public class HostedServiceA : IHostedService
     {
         Logger.LogInformation("HostedServiceA.StartAsync()");
 
-        await Mongo.ConnectAsync();
+        await Mongo.ConnectAsync(cancellationToken);
     }
 
     Task IHostedService.StopAsync(CancellationToken cancellationToken)
